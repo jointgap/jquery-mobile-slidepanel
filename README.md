@@ -8,10 +8,12 @@ USAGE
 Follow a small example of use.
 
 index.html:
+
+
     <html>
         <head>
             <script type="text/javascript" src="jquery-1.6.min.js"></script>
-            <script type="text/javascript" src="/jquery.mobile-1.0a4.1.js"></script>
+            <script type="text/javascript" src="jquery.mobile-1.0a4.1.js"></script>
             <link rel="stylesheet" type="text/css" href='jquery.mobile-1.0a4.1.css' />
             
             <script type="text/javascript" src="slide_panel.js"></script>
