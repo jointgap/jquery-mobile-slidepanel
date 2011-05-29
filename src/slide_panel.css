@@ -1,15 +1,35 @@
 .slide-panel > div {
 	display: none;
 }
-
 .slide-panel > div:first-child {
 	display: block;
 }
-
 .slide-panel > div.hidden {
 	display: none;
 }
-
 .slide-panel > div.displayed {
 	display: inline;
+}
+
+/**
+ * Selector	
+ */
+
+.slide-panel > .slide-panel-indicator {
+	text-align: center;
+}
+.slide-panel > .slide-panel-indicator > li {
+	display: inline-block;
+	background: #999;
+	width: 10px;
+	height: 10px;
+	margin: 0 1px;
+	font-size: 0;
+}
+.slide-panel > .slide-panel-indicator > li.active {
+	background: #55F;
+}
+/* THEME */
+.slide-panel > .slide-panel-indicator > li.circle {
+	border-radius: 10px;
 }

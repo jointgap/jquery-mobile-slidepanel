@@ -46,6 +46,8 @@ index.html:
 
 Simple like that.
 
+To see more examples, look to the demos folder.
+
 BUGS?
 ====
 If you found a bug, please report in https://github.com/rcelha/jquery-mobile-slidepanel/issues creating a new Issue explaining with most level of details and specifying how to reproduce the bug.
