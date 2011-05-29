@@ -11,5 +11,5 @@
 }
 
 .slide-panel > div.displayed {
-	display: block;
+	display: inline;
 }

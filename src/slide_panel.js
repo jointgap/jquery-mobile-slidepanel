@@ -27,17 +27,21 @@ $.extend(  $.mobile , {
 			return false;
 
 		var from = $(from), to = $(to);
-
-		// Slide from -> to
-		from.addClass("hidden slide out "+ ( reverse ? "reverse" : "" ));
-		to.removeClass("hidden");
-		to.addClass($.mobile.activePageClass + " slide in " + ( reverse ? "reverse" : "" ));
-
-		// Remove Animations
-		to.animationComplete( function() {
-			to.removeClass("out in reverse slide" );
-			from.removeClass("out in reverse slide" );
-			from.removeClass( $.mobile.activePageClass);
+		
+		// hide the A panel
+		from.addClass("slide out "+ ( reverse ? "reverse" : "" ));
+		from.animationComplete( function() {
+			from.addClass('hidden');
+			
+			// show the B panel
+			to.removeClass("hidden")
+				.addClass($.mobile.activePageClass)
+				.addClass("slide in " + ( reverse ? "reverse" : "" ));
+			to.animationComplete( function() {
+				to.removeClass("out in reverse slide reverse");
+				from.removeClass("out in reverse slide reverse");
+				from.removeClass( $.mobile.activePageClass);
+			})
 		});
 	}
 });
@@ -48,11 +52,13 @@ $(':jqmData(role="page")').ready( function() {
 });
 $.mobile.getSlidePanels().live('swipeleft', function(event) {
 	var from = event.target;
+	from = $(from).parents(":jqmData(role='slide_panel')>div")[0];
 	var to = $.mobile.getNextSlidePanel(from);
 	$.mobile.changeSlidePanelItem(from, to);
 });
 $.mobile.getSlidePanels().live('swiperight', function() {
 	var from = event.target;
+	from = $(from).parents(":jqmData(role='slide_panel')>div")[0];
 	var to = $.mobile.getPrevSlidePanel(from);
 	$.mobile.changeSlidePanelItem(from, to, true);
 });
