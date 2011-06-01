@@ -7,21 +7,6 @@
 		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
 		<script type="text/javascript" src="../src/slide_panel.js"></script>
 		<link rel="stylesheet" href="../src/slide_panel.css" />
-
-		<script>
-			$(document).ready( function() {
-				$('#prev').click( function() {
-					var instance = SlidePanel.getInstanceByEl($('#sp1'));
-					var to = instance.getPrevPanel();
-					instance.activatePanel(to);
-				});
-				$('#next').click( function() {
-					var instance = SlidePanel.getInstanceByEl($('#sp1'));
-					var to = instance.getNextPanel();
-					instance.activatePanel(to);
-				});
-			});
-		</script>
 	</head>
 	<body>
 		<div data-role="page" id="bla">
@@ -29,10 +14,10 @@
 				<h1>Slide panel</h1>
 			</div>
 			<div data-role="content" data-theme="b">
-				<div data-role="slide_panel" data-indicator='none' id='sp1'>
+				<div data-role="slide_panel" data-indicator='square' id='sp1'>
 
 					<div id="a">
-						<h1>First Panel</h1>
+						<h1>1.1 Panel</h1>
 						<p>
 							This is the first panel
 						</p>
@@ -44,7 +29,19 @@
 						</p>
 					</div>
 					<div id="b">
-						<h1>Second Panel</h1>
+						<h1>1.2 Panel</h1>
+						<p>
+							And here, the second panel
+						</p>
+						<p>
+							BLA BLA BLA
+						</p>
+						<p>
+							BLA BLA LBA
+						</p>
+					</div>
+					<div>
+						<h1>1.3 Panel</h1>
 						<p>
 							And here, the second panel
 						</p>
@@ -56,15 +53,32 @@
 						</p>
 					</div>
 				</div>
-				<div class="ui-block-a">
-					<button id='prev'>
-						Prev
-					</button>
-				</div>
-				<div class="ui-block-b">
-					<button id='next'>
-						Next
-					</button>
+				<div data-role="slide_panel" id='sp2'>
+
+					<div>
+						<h1>2.1 Panel</h1>
+						<p>
+							This is the first panel
+						</p>
+						<p>
+							BLA BLA BLA
+						</p>
+						<p>
+							BLA BLA LBA
+						</p>
+					</div>
+					<div>
+						<h1>2.2 Panel</h1>
+						<p>
+							And here, the second panel
+						</p>
+						<p>
+							BLA BLA BLA
+						</p>
+						<p>
+							BLA BLA LBA
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>

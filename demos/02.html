@@ -11,9 +11,9 @@
 		<script>
 			$(document).ready( function() {
 				$('#cancel_button').click( function() {
-					var from = $('#b')[0];
-					var to = $.mobile.getPrevSlidePanel(from);
-					$.mobile.changeSlidePanelItem(from, to, true);
+					var instance = SlidePanel.getInstanceByEl($('#sp1'));
+					var to = instance.getPrevPanel();
+					instance.activatePanel(to);
 				});
 			});
 		</script>
@@ -24,7 +24,7 @@
 				<h1>Slide panel</h1>
 			</div>
 			<div data-role="content" data-theme="b">
-				<div data-role="slide_panel" >
+				<div data-role="slide_panel" id="sp1">
 
 					<div id="a">
 						<h1>Hello</h1>

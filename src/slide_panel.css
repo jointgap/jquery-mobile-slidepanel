@@ -1,15 +1,7 @@
-.slide-panel > div {
-	display: none;
-}
-.slide-panel > div:first-child {
-	display: block;
-}
 .slide-panel > div.hidden {
 	display: none;
 }
-.slide-panel > div.displayed {
-	display: inline;
-}
+
 
 /**
  * Selector	
